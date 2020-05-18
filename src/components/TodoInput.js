@@ -7,9 +7,11 @@ export default () => {
     const [todo, setTodo] = useState('');
     const dispatch = useDispatch();
     const addTodo = ((todo) => dispatch(addTodoAction(todo)));
+
     const onChange = e => {
         setTodo(e.target.value);
     }
+
     const onSubmit = e => {
         e.preventDefault();
         if(todo.trim() === '')
@@ -23,6 +25,7 @@ export default () => {
 
         setTodo('');
     }
+    
     return (
         <form onSubmit={onSubmit}>
             <div className='form-div'>
